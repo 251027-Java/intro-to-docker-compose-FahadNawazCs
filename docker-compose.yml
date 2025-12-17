@@ -1,15 +1,15 @@
 version: '3.8'
 services:
   app:
-    # TODO: Configure build context
-    build: . 
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: demo_api
     ports:
       - "8080:8080"
     environment:
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: postgres
-
     depends_on:
       - db
       
